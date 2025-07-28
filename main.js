@@ -20,18 +20,28 @@ const sconto20 = 0.2; //sconto 20%
 const sconto40 = 0.4; //sconto 40%
 
 //seleziono gli input e il button
-const ageEl = document.getElementById('ageField');
-const kmEl = document.getElementById('kmField');
+const ageFieldEl = document.getElementById('ageField');
+const kmFieldEl = document.getElementById('kmField');
 const calcolaEl = document.getElementById('calcolaBtn');
 
+//seleziono gli elementi di output
+const ageEl = document.getElementById('age');
+const kmEl = document.getElementById('km');
+const costoBigliettoEl = document.getElementById('costoBiglietto');
 
-//creo un evento sul click del pulsante in cui calcolo il costo del biglietto e lo stampo in console
-calcolaEl.addEventListener('click', ()=>{
-    const costoBiglietto = calcoloCostoBiglietto(ageEl.value, kmEl.value);
-    console.log(`Il biglietto per percorrere ${kmEl.value} km per un passeggero di ${ageEl.value} anni è di ${costoBiglietto.toFixed(2)} euro`)
+// //creo un evento sul click del pulsante in cui calcolo il costo del biglietto e lo stampo in console
+// calcolaEl.addEventListener('click', ()=>{
+//     const costoBiglietto = calcoloCostoBiglietto(ageFieldEl.value, kmFieldEl.value);
+//     console.log(`Il biglietto per percorrere ${kmFieldEl.value} km per un passeggero di ${ageFieldEl.value} anni è di ${costoBiglietto.toFixed(2)} euro`)
+// })
+
+//creo un event listener sul submit del form 
+document.querySelector('form').addEventListener ('submit', (e)=>{
+    e.preventDefault();
+    const costoBiglietto = calcoloCostoBiglietto(ageFieldEl.value, kmFieldEl.value);
+    ageEl.innerHTML = ageFieldEl.value;
+    kmEl.innerHTML = kmFieldEl.value;
+    costoBigliettoEl.innerHTML = costoBiglietto.toFixed(2);
 })
-
-
-
 
 
