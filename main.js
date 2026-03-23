@@ -46,8 +46,8 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     const costoBiglietto = calcoloCostoBiglietto(ageFieldEl.value, kmFieldEl.value);
     nameEl.innerHTML = nameFieldEl.value;
-    ageEl.innerHTML = ageFieldEl.value + 'anni';
-    kmEl.innerHTML = kmFieldEl.value + 'km';
+    ageEl.innerHTML = ageFieldEl.value + ' anni';
+    kmEl.innerHTML = kmFieldEl.value + ' km';
     tariffaEl.innerHTML = tariffaApplicata;
     costoBigliettoEl.innerHTML = costoBiglietto.toFixed(2) + '€';
 })
