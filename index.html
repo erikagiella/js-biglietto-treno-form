@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <div class="container ">
+        <div class="container">
             <nav class="navbar navbar-expand-lg ">
                 <div class="container-fluid">
                     <a class="navbar-brand text-dark d-flex flex-row align-items-center text-uppercase gap-3 mx-auto"
@@ -25,18 +25,19 @@
             </nav>
         </div>
     </header>
-    <main class="py-5">
+    <main class="mt-2">
         <div class="container">
             <div class="row gx-4 gy-4 justify-content-center">
                 <div class="col-12 col-lg-6">
-                    <div class="card shadow-sm border-0">
+                    <div class="card shadow-sm border-0 rounded-4">
                         <div class="card-body">
-                            <h2 class="card-title text-center text-uppercase bold mb-4">Calcola il prezzo del tuo
-                                biglietto</h2>
+                            <h2 class="card-title text-center text-uppercase fw-bolder mb-3">
+                                Calcola il prezzo del tuo biglietto
+                            </h2>
 
                             <form id="ticketForm" class="row g-3">
                                 <div class="col-12">
-                                    <label for="nameField" class="form-label fw-semibold">Nome e cognome</label>
+                                    <label for="nameField" class="form-label fw-medium">Nome e cognome</label>
                                     <input type="text" class="form-control" id="nameField" placeholder="Nome e cognome"
                                         required>
                                 </div>
@@ -48,13 +49,13 @@
                                 </div>
 
                                 <div class="col-12 col-md-6">
-                                    <label for="kmField" class="form-label bold">Km da percorrere</label>
+                                    <label for="kmField" class="form-label fw-medium">Km da percorrere</label>
                                     <input type="number" class="form-control" id="kmField" placeholder="Km" min="0"
                                         required>
                                 </div>
 
-                                <div class="col-12 text-center fw-bold">
-                                    <button type="submit" class="btn btn-warning text-uppercase fs-5 px-4"
+                                <div class="col-12 text-center mt-4">
+                                    <button type="submit" class="btn btn-warning text-uppercase fw-bold fs-5 px-4"
                                         id="calcolaBtn">Calcola</button>
                                 </div>
                             </form>
@@ -63,9 +64,9 @@
                 </div>
 
                 <div class="col-12 col-lg-6">
-                    <div class="card shadow-sm border-0">
+                    <div class="card shadow-sm border-0 rounded-4 mb-4">
                         <div class="card-body">
-                            <h2 class="card-title text-center text-uppercase bold mb-4">Il tuo biglietto</h2>
+                            <h2 class="card-title text-center text-uppercase fw-bolder mb-3">Il tuo biglietto</h2>
 
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item d-flex justify-content-between align-items-center px-0">
