@@ -5,98 +5,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Biglietto Treno</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="./img/logo-treno.png" alt="Logo" width="40" class="d-inline-block align-text-center">
-                    <span id="logo-title">Erika Trains</span>
-                </a>
-            </div>
-        </nav>
+        <div class="container ">
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-dark d-flex flex-row align-items-center text-uppercase gap-3 mx-auto"
+                        href="#">
+                        <i class="bi bi-train-freight-front-fill fs-2"></i>
+                        <h1 id="logo-title" class="text-dark fw-bolder">Erika's Trains</h1>
+                    </a>
+                </div>
+            </nav>
+        </div>
     </header>
-    <main>
-        <!-- Form -->
+    <main class="py-5">
         <div class="container">
-            <h1 class="text-center">Calcola il prezzo del tuo biglietto</h1>
-            <form class="container text-center mt-3 bc-light border-set">
-                <div class="row">
-                    <div class="col">
-                        <div class="bold">Nome e cognome</div>
-                        <input type="text" id="nameField" placeholder="Nome e cognome" required>
-                    </div>
-                    <div class="col">
-                        <div class="bold">La tua età</div>
-                        <input type="number" id="ageField" placeholder="Età" required>
-                    </div>
-                    <div class="col">
-                        <div class="bold">Km da percorrere</div>
-                        <input type="number" id="kmField" placeholder="km" required>
-                    </div>
-                </div>
-                <button class="mt-4 bold" id="calcolaBtn">Calcola!</button>
-            </form>
-        </div>
+            <div class="row gx-4 gy-4 justify-content-center">
+                <div class="col-12 col-lg-6">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <h2 class="card-title text-center text-uppercase bold mb-4">Calcola il prezzo del tuo
+                                biglietto</h2>
 
-        <!-- Biglietto -->
-        <div class="container text-center">
-            <h1> Il tuo biglietto</h1>
-            <div class="container text-center mt-3 bc-light border-set px-5">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="row">
-                            <div class="col">Passeggero:</div>
-                            <div class="col">
-                                <span class="bold" id="name">N/D</span>
-                            </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col">Età:</div>
-                            <div class="col">
-                                <span class="bold" id="age">N/D</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="row">
-                            <div class="col">
-                                Chilometri da percorrere:
-                            </div>
-                            <div class="col">
-                                Tariffa applicata:
-                            </div>
-                            <div class="col">
-                                Costo biglietto:
-                            </div>
-                        </div>
-                        <div class="row mt-2">
-                            <div class="col">
-                                <span class="bold" id="km">N/D</span>
-                            </div>
-                            <div class="col">
-                                <span class="bold " id="tariffa">N/D</span>
-                            </div>
-                            <div class="col">
-                                <span class="bold display-6" id="costoBiglietto">N/D</span>
-                            </div>
+                            <form id="ticketForm" class="row g-3">
+                                <div class="col-12">
+                                    <label for="nameField" class="form-label fw-semibold">Nome e cognome</label>
+                                    <input type="text" class="form-control" id="nameField" placeholder="Nome e cognome"
+                                        required>
+                                </div>
+
+                                <div class="col-12 col-md-6">
+                                    <label for="ageField" class="form-label fw-medium">La tua età</label>
+                                    <input type="number" class="form-control" id="ageField" placeholder="Età" min="0"
+                                        required>
+                                </div>
+
+                                <div class="col-12 col-md-6">
+                                    <label for="kmField" class="form-label bold">Km da percorrere</label>
+                                    <input type="number" class="form-control" id="kmField" placeholder="Km" min="0"
+                                        required>
+                                </div>
+
+                                <div class="col-12 text-center fw-bold">
+                                    <button type="submit" class="btn btn-warning text-uppercase fs-5 px-4"
+                                        id="calcolaBtn">Calcola</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
 
+                <div class="col-12 col-lg-6">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <h2 class="card-title text-center text-uppercase bold mb-4">Il tuo biglietto</h2>
+
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                    <span class="text-muted">Passeggero</span>
+                                    <strong id="name">N/D</strong>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                    <span class="text-muted">Età</span>
+                                    <strong id="age">N/D</strong>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                    <span class="text-muted">Km</span>
+                                    <strong id="km">N/D</strong>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                    <span class="text-muted">Tariffa</span>
+                                    <strong id="tariffa">N/D</strong>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                    <span class="text-muted">Costo</span>
+                                    <span class="display-6 fw-bold" id="costoBiglietto">N/D</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
-
-        <div></div>
-        <div></span></div>
-        <div>
-        </div>
         </div>
     </main>
     <script src="./main.js"></script>

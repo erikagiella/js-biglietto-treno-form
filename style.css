@@ -14,45 +14,17 @@ body {
     background-color: var(--fbs-bg);
 }
 
-.container {
-    padding: 20px;
-}
 
-
-/* utilities */
-
-.border-set {
-    border: 1px solid none;
-    border-radius: 20px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
-
-.bc-light {
-    background-color: var(--fbs-lighter);
-}
-
-.bold {
-    font-weight: bold;
-}
 
 /* header */
+
 #logo-title {
-    color: black;
-    font-weight: bold;
-    font-size: 1.8rem;
+    margin: 0;
 }
+
 
 /* main */
 
 ::placeholder {
     text-align: center;
-}
-
-button {
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    background-color: var(--fbs-bg);
-    border: 1px solid var(--fbs-bg-dark);
-    border-radius: 10px;
-
 }
