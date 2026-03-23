@@ -11,12 +11,17 @@
 }
 
 body {
-    background-color: var(--fbs-bg);
+    background: linear-gradient(to bottom, #bbdefb, var(--fbs-lighter));
 }
 
 
-
 /* header */
+
+header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e0e0e0;
+}
 
 #logo-title {
     margin: 0;

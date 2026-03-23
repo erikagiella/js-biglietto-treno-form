@@ -1,17 +1,23 @@
-// creo una funzione che prende età e km e restituisce il costo del biglietto
+/**
+ * Calcola il costo del biglietto applicando sconti in base all'età
+ * @param {number} age - Età del passeggero
+ * @param {number} km - Chilometri da percorrere
+ * @returns {number} Prezzo finale del biglietto
+ */
 function calcoloCostoBiglietto(age, km) {
     const ageNum = Number(age);
     const kmNum = Number(km);
 
+    // Inizializza con tariffa standard
     tariffaApplicata = 'Standard';
     let costoBiglietto = kmNum * prezzoAlChilometro;
 
-    // SE il passeggero ha meno di 18 anni, al risultato verrà scontato il 20%
+    // Applica sconto under 18 (20%)
     if (ageNum < 18) {
         tariffaApplicata = 'Under 18';
         costoBiglietto = costoBiglietto - (costoBiglietto * sconto20);
     }
-    // ALTRIMENTI SE il passeggero ha più di 65 anni, al risultato verrà scontato il 40%
+    // Applica sconto over 65 (40%)
     else if (ageNum > 65) {
         tariffaApplicata = 'Over 65';
         costoBiglietto = costoBiglietto - (costoBiglietto * sconto40);
@@ -20,7 +26,12 @@ function calcoloCostoBiglietto(age, km) {
     return costoBiglietto;
 }
 
-//funzione di validazione dei dati del form
+/**
+ * Valida i dati inseriti nel form
+ * Controlla: nome non vuoto, età tra 1 e 120, km > 0
+ * Mostra messaggi di errore personalizzati
+ * @returns {boolean} true se il form è valido, false altrimenti
+ */
 function validateForm() {
     let isValid = true;
 
@@ -59,20 +70,21 @@ function validateForm() {
     return isValid;
 }
 
-//creo la costante in cui metto il prezzo a km e le costanti per gli sconti
+// ===== COSTANTI =====
+// Prezzo base per chilometro e percentuali di sconto
 const prezzoAlChilometro = 0.21;
-const sconto20 = 0.2; //sconto 20%
-const sconto40 = 0.4; //sconto 40%
-let tariffaApplicata = '';
+const sconto20 = 0.2; // Sconto 20% per passeggeri under 18
+const sconto40 = 0.4; // Sconto 40% per passeggeri over 65
+let tariffaApplicata = ''; // Variabile per memorizzare il tipo di tariffa
 
-//seleziono gli input e il form
+// ===== SELEZIONE ELEMENTI DOM =====
+// Input del form
 const ageFieldEl = document.getElementById('ageField');
 const kmFieldEl = document.getElementById('kmField');
-const calcolaEl = document.getElementById('calcolaBtn');
 const nameFieldEl = document.getElementById('nameField');
 const form = document.getElementById('ticketForm');
 
-//seleziono gli elementi di output
+// Elementi di output (biglietto)
 const ageEl = document.getElementById('age');
 const kmEl = document.getElementById('km');
 const nameEl = document.getElementById('name');
@@ -81,18 +93,21 @@ const tariffaEl = document.getElementById('tariffa');
 
 
 
-//creo un event listener sul submit del form 
+// ===== EVENT LISTENER =====
+// Ascolta il submit del form, valida i dati e calcola il biglietto
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Previene il reload della pagina
 
+    // Esce se la validazione fallisce
     if (!validateForm()) return;
 
+    // Calcola il prezzo e aggiorna l'interfaccia
     const costoBiglietto = calcoloCostoBiglietto(ageFieldEl.value, kmFieldEl.value);
     nameEl.innerHTML = nameFieldEl.value;
     ageEl.innerHTML = ageFieldEl.value + ' anni';
     kmEl.innerHTML = kmFieldEl.value + ' km';
     tariffaEl.innerHTML = tariffaApplicata;
     costoBigliettoEl.innerHTML = costoBiglietto.toFixed(2) + '€';
-})
+});)
 
 
