@@ -4,6 +4,10 @@
     --fbs-bg-dark: rgb(130, 104, 0);
 }
 
+html {
+    height: 100%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +16,13 @@
 
 body {
     background: linear-gradient(to bottom, #bbdefb, var(--fbs-lighter));
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main {
+    flex: 1;
 }
 
 
