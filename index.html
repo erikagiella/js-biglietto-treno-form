@@ -29,7 +29,7 @@
         <div class="container">
             <div class="row gx-4 gy-4 justify-content-center">
                 <div class="col-12 col-lg-6">
-                    <div class="card shadow-sm border-0 rounded-4">
+                    <div class="card shadow border-0 rounded-4">
                         <div class="card-body">
                             <h2 class="card-title text-center text-uppercase fw-bolder mb-3">
                                 Calcola il prezzo del tuo biglietto
@@ -38,20 +38,20 @@
                             <form id="ticketForm" class="row g-3">
                                 <div class="col-12">
                                     <label for="nameField" class="form-label fw-medium">Nome e cognome</label>
-                                    <input type="text" class="form-control" id="nameField" placeholder="Nome e cognome"
-                                        required>
+                                    <input type="text" class="form-control" id="nameField" placeholder="Nome e cognome">
+                                    <div class="invalid-feedback" id="nameError"></div>
                                 </div>
 
                                 <div class="col-12 col-md-6">
                                     <label for="ageField" class="form-label fw-medium">La tua età</label>
-                                    <input type="number" class="form-control" id="ageField" placeholder="Età" min="0"
-                                        required>
+                                    <input type="number" class="form-control" id="ageField" placeholder="Età" min="0">
+                                    <div class="invalid-feedback" id="ageError"></div>
                                 </div>
 
                                 <div class="col-12 col-md-6">
                                     <label for="kmField" class="form-label fw-medium">Km da percorrere</label>
-                                    <input type="number" class="form-control" id="kmField" placeholder="Km" min="0"
-                                        required>
+                                    <input type="number" class="form-control" id="kmField" placeholder="Km" min="0">
+                                    <div class="invalid-feedback" id="kmError"></div>
                                 </div>
 
                                 <div class="col-12 text-center mt-4">
@@ -64,7 +64,7 @@
                 </div>
 
                 <div class="col-12 col-lg-6">
-                    <div class="card shadow-sm border-0 rounded-4 mb-4">
+                    <div class="card shadow border-0 rounded-4 mb-4">
                         <div class="card-body">
                             <h2 class="card-title text-center text-uppercase fw-bolder mb-3">Il tuo biglietto</h2>
 

@@ -20,6 +20,45 @@ function calcoloCostoBiglietto(age, km) {
     return costoBiglietto;
 }
 
+//funzione di validazione dei dati del form
+function validateForm() {
+    let isValid = true;
+
+    // Validazione nome
+    if (!nameFieldEl.value.trim()) {
+        document.getElementById('nameError').textContent = 'Il nome è obbligatorio.';
+        nameFieldEl.classList.add('is-invalid');
+        isValid = false;
+    } else {
+        document.getElementById('nameError').textContent = '';
+        nameFieldEl.classList.remove('is-invalid');
+    }
+
+    // Validazione età
+    const age = Number(ageFieldEl.value);
+    if (isNaN(age) || age < 1 || age > 120) {
+        document.getElementById('ageError').textContent = 'Inserisci un\'età valida (1-120 anni).';
+        ageFieldEl.classList.add('is-invalid');
+        isValid = false;
+    } else {
+        document.getElementById('ageError').textContent = '';
+        ageFieldEl.classList.remove('is-invalid');
+    }
+
+    // Validazione km
+    const km = Number(kmFieldEl.value);
+    if (isNaN(km) || km <= 0) {
+        document.getElementById('kmError').textContent = 'Inserisci chilometri validi (>0).';
+        kmFieldEl.classList.add('is-invalid');
+        isValid = false;
+    } else {
+        document.getElementById('kmError').textContent = '';
+        kmFieldEl.classList.remove('is-invalid');
+    }
+
+    return isValid;
+}
+
 //creo la costante in cui metto il prezzo a km e le costanti per gli sconti
 const prezzoAlChilometro = 0.21;
 const sconto20 = 0.2; //sconto 20%
@@ -41,9 +80,13 @@ const costoBigliettoEl = document.getElementById('costoBiglietto');
 const tariffaEl = document.getElementById('tariffa');
 
 
+
 //creo un event listener sul submit del form 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    if (!validateForm()) return;
+
     const costoBiglietto = calcoloCostoBiglietto(ageFieldEl.value, kmFieldEl.value);
     nameEl.innerHTML = nameFieldEl.value;
     ageEl.innerHTML = ageFieldEl.value + ' anni';
